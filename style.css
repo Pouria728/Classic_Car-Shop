@@ -1,0 +1,11 @@
+body {
+  font-family: Tahoma;
+  direction: rtl;
+  margin: 20px;
+}
+
+.product {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 10px;
+}

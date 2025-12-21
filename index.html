@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>فروشگاه خودرو</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>فروشگاه خودروهای اروپایی کلاسیک</h2>
+
+<a href="cart.html">🛒 سبد خرید: <span id="cartCount">0</span></a>
+<hr>
+
+<div id="productList"></div>
+
+<!-- آرایه محصولات -->
+<script src="products.js"></script>
+
+<!-- نمایش محصولات -->
+<script>
+  const list = document.getElementById("productList");
+
+  products.forEach(p => {
+    list.innerHTML += `
+      <div class="product">
+        <img src="${p.image}" width="200" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>قیمت: ${p.price.toLocaleString()} تومان</p>
+        <a href="product.html?id=${p.id}">مشاهده جزئیات</a>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>

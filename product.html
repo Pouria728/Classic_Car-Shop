@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>جزئیات محصول</title>
+</head>
+<body>
+
+<h1 id="name"></h1>
+<p id="desc"></p>
+<p id="price"></p>
+<button onclick="addToCart()">افزودن به سبد خرید</button>
+
+<script src="products.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+  const product = products.find(p => p.id == productId);
+
+  document.getElementById("name").innerText = product.name;
+  document.getElementById("desc").innerText = product.desc;
+  document.getElementById("price").innerText = "قیمت: " + product.price.toLocaleString() + " تومان";
+
+  const img = document.createElement("img");
+  img.src = product.image;
+  img.width = 300;
+  document.body.insertBefore(img, document.getElementById("name").nextSibling);
+
+  function addToCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let item = cart.find(p => p.id == productId);
+
+    if (item) item.qty++;
+    else cart.push({ ...product, qty: 1 });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("به سبد خرید اضافه شد");
+  }
+</script>
+
+</body>
+</html>
