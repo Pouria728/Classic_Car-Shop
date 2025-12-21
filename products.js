@@ -5,7 +5,7 @@ const products = [
   { id: 4, name: "Opel Rekord D 1975", price: 2000000000, image: "images/opel_rekord.jpg", desc: "سدان خانوادگی کلاسیک از اوپل" },
   { id: 5, name: "BMW E21 320 1978", price: 3200000000, image: "images/bmw_e21.jpg", desc: "اولین نسل سری ۳ بی‌ام‌و" },
   { id: 6, name: "BMW E30 1985", price: 3800000000, image: "images/bmw_e30.jpg", desc: "مدل افسانه‌ای با هندلینگ عالی" },
-  { id: 7, name: "Mercedes-Benz W123 1978", price: 4200000000, images: "images/mercedes_w123.jpg", desc: "نماد دوام و کیفیت مرسدس بنز" },
+  { id: 7, name: "Mercedes-Benz W123 1978", price: 4200000000, images: "images/mercedes_w123.jpg.webp", desc: "نماد دوام و کیفیت مرسدس بنز" },
   { id: 8, name: "Mercedes-Benz W114 1974", price: 3900000000, image: "images/mercedes_w114.jpg", desc: "سدان لوکس کلاسیک" },
   { id: 9, name: "Peugeot 504 1976", price: 1700000000, image: "images/peugeot_504.jpg", desc: "خودروی محبوب اروپایی با سواری نرم" },
   { id: 10, name: "Peugeot 404 1970", price: 1500000000, image: "images/peugeot_404.jpg", desc: "طراحی کلاسیک و دوام بالا" },
@@ -16,5 +16,6 @@ const products = [
   { id: 15, name: "Volvo 240 1980", price: 3000000000, image: "images/volvo_240.jpg", desc: "ایمنی بالا و طراحی مکعبی خاص" }
 
 ];
+
 
 
