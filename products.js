@@ -1,5 +1,5 @@
 const products = [
-  { id: 1, name: "Volkswagen Beetle 1967", price: 2200000000, image: "C:\Users\Pouria\Desktop\Car-Shop\pictures\vw_beetle.jpg.webp", desc: "خودروی کلاسیک محبوب با طراحی خاص و موتور عقب" },
+  { id: 1, name: "Volkswagen Beetle 1967", price: 2200000000, image: "images/vw_beetle.jpg.webp", desc: "خودروی کلاسیک محبوب با طراحی خاص و موتور عقب" },
   { id: 2, name: "Volkswagen Golf Mk1 1976", price: 2500000000, image: "pictures/vw_golf1.jpg", desc: "نسل اول گلف، آغازگر خودروهای هاچ‌بک مدرن" },
   { id: 3, name: "Opel Kadett C 1979", price: 1800000000, image: "pictures/opel_kadett.jpg", desc: "خودروی اقتصادی آلمانی با دوام بالا" },
   { id: 4, name: "Opel Rekord D 1975", price: 2000000000, image: "pictures/opel_rekord.jpg", desc: "سدان خانوادگی کلاسیک از اوپل" },
@@ -16,3 +16,4 @@ const products = [
   { id: 15, name: "Volvo 240 1980", price: 3000000000, image: "pictures/volvo_240.jpg", desc: "ایمنی بالا و طراحی مکعبی خاص" }
 
 ];
+
