@@ -3,62 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سبد خرید</title>
+  <title>فروشگاه خودروهای کلاسیک اروپایی</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <h1><a href="index.html" style="color: white; text-decoration: none;">فروشگاه خودروهای کلاسیک</a></h1>
-      <a href="index.html">بازگشت به فروشگاه</a>
+      <h1>فروشگاه خودروهای اروپایی کلاسیک</h1>
+      <a href="cart.html">🛒 سبد خرید: <span id="cartCount">0</span></a>
     </nav>
   </header>
 
   <main>
-    <h2>سبد خرید شما</h2>
-    <div id="cartList"></div>
-    <p id="totalPrice"></p>
+    <div id="productList"></div>
   </main>
 
   <footer>
     <p>&copy; 2026 فروشگاه خودروهای کلاسیک. تمامی حقوق محفوظ است.</p>
   </footer>
 
+  <!-- آرایه محصولات -->
   <script src="products.js"></script>
+
+  <!-- نمایش محصولات -->
   <script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartList = document.getElementById("cartList");
+    const list = document.getElementById("productList");
 
-    cartList.innerHTML = "";
-    let total = 0;
+    products.forEach(p => {
+      list.innerHTML += `
+        <div class="product">
+          <img src="${p.image}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>قیمت: ${p.price.toLocaleString()} تومان</p>
+          <a href="product.html?id=${p.id}">مشاهده جزئیات</a>
+        </div>
+      `;
+    });
 
-    if (cart.length === 0) {
-      cartList.innerHTML = "<p>سبد خرید شما خالی است.</p>";
-    } else {
-      cart.forEach(p => {
-        total += p.price * p.qty;
-        cartList.innerHTML += `
-          <div>
-            <img src="${p.image}" alt="${p.name}">
-            <div>
-              <b>${p.name}</b><br>
-              ${p.desc}<br>
-              تعداد: ${p.qty}<br>
-              قیمت: ${(p.price * p.qty).toLocaleString()} تومان
-            </div>
-            <button onclick="removeFromCart(${p.id})">حذف</button>
-          </div>
-        `;
-      });
+    // Update cart count
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById("cartCount").innerText = count;
     }
-
-    document.getElementById("totalPrice").innerText = "جمع کل: " + total.toLocaleString() + " تومان";
-
-    function removeFromCart(id) {
-      cart = cart.filter(p => p.id != id);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      location.reload();
-    }
+    updateCartCount();
   </script>
 
 </body>
